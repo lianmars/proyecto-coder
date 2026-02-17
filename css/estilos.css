@@ -34,6 +34,16 @@ body {
     background-position: 0% 50%;
   }
 }
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 header {
   max-width: 1100px;
   margin: 0 auto;
@@ -50,7 +60,7 @@ header .navbar .nav-link::after {
   height: 2px;
   left: 0;
   bottom: 0;
-  background-color: #71ff6c;
+  background-color: #b26cff;
   transition: width 0.3s ease;
 }
 header .navbar .nav-link:hover::after {
@@ -77,6 +87,29 @@ header .navbar .nav-link:hover::after {
 .mainhome section p {
   line-height: 1.6;
 }
+.mainhome section .card {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  transition: transform 0.3s ease;
+}
+.mainhome section .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mainhome section .card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.mainhome section .card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.mainhome section .card:hover {
+  transform: translateY(-4px);
+}
+.mainhome section .card:hover .card-img-top {
+  transform: scale(1.1);
+}
+.mainhome section .card .card-img-top {
+  transition: transform 0.3s ease;
+}
 .mainhome .logohome {
   width: 320px;
   height: 320px;
@@ -86,6 +119,9 @@ header .navbar .nav-link:hover::after {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   flex-shrink: 0;
   order: 2;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.4s;
 }
 
 @media (max-width: 768px) {
@@ -99,19 +135,6 @@ header .navbar .nav-link:hover::after {
     height: 250px;
   }
 }
-.mainhome section .card {
-  transition: transform 0.3s ease;
-}
-.mainhome section .card:hover {
-  transform: translateY(-4px);
-}
-.mainhome section .card:hover .card-img-top {
-  transform: scale(1.1);
-}
-.mainhome section .card .card-img-top {
-  transition: transform 0.3s ease;
-}
-
 .contacto {
   max-width: 1100px;
   margin: 0 auto;
@@ -134,6 +157,9 @@ header .navbar .nav-link:hover::after {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.5s;
 }
 .contacto .form:hover {
   transform: translateY(-4px);
@@ -170,6 +196,9 @@ header .navbar .nav-link:hover::after {
   height: 320px;
   object-fit: cover;
   border-radius: 16px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.6s;
 }
 .contacto .imgform:hover {
   transform: scale(1.05);
