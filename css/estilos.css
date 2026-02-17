@@ -1,0 +1,245 @@
+.contacto .form, .mainhome section .card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #1fd7ac, #410af7, #960f96, #08b07b);
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease infinite;
+  color: #e5e7eb;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+header .navbar .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+header .navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #71ff6c;
+  transition: width 0.3s ease;
+}
+header .navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+.mainhome {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+.mainhome section {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+.mainhome section p {
+  line-height: 1.6;
+}
+.mainhome .logohome {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #2a2a2a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+  order: 2;
+}
+
+@media (max-width: 768px) {
+  .mainhome section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .mainhome .logohome {
+    width: 250px;
+    height: 250px;
+  }
+}
+.mainhome section .card {
+  transition: transform 0.3s ease;
+}
+.mainhome section .card:hover {
+  transform: translateY(-4px);
+}
+.mainhome section .card:hover .card-img-top {
+  transform: scale(1.1);
+}
+.mainhome section .card .card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.contacto {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+.contacto h1 {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.contacto .form {
+  padding: 40px;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contacto .form:hover {
+  transform: translateY(-4px);
+}
+.contacto .form label {
+  color: white;
+}
+.contacto .form input,
+.contacto .form textarea {
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  outline: none;
+}
+.contacto .form input:focus,
+.contacto .form textarea:focus {
+  border-color: #9ca3af;
+}
+.contacto .form button {
+  padding: 14px;
+  background: linear-gradient(135deg, #b734a3, #08d8b2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.contacto .form button:hover {
+  transform: translateY(-2px);
+}
+.contacto .imgform {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.contacto .imgform:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .contacto {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .contacto .imgform {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+.footer {
+  margin: 120px auto 0;
+  max-width: 1100px;
+  padding: 28px 20px;
+  border-top: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.footer p {
+  color: white;
+  opacity: 0.85;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footersocials {
+  display: flex;
+  gap: 20px;
+}
+.footersocials a {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  transition: 0.35s ease;
+}
+.footersocials a img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.footersocials a:hover {
+  transform: translateY(-6px);
+}
+.footersocials a:hover img {
+  transform: scale(1.15);
+}
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footersocials {
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */
