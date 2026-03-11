@@ -9,26 +9,29 @@
   transition: 0.3s ease;
 }
 
-// ===== RESET + BODY =====
+// ===== RESET =====
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+// ===== BODY =====
 body {
   font-family: "Inter", system-ui, sans-serif;
   min-height: 100vh;
+
   background: linear-gradient(
     120deg,
     #013467,
     #7b61e0,
     #00203f,
     #36ecde
-    
   );
+
   background-size: 400% 400%;
   animation: gradientMove 11s ease infinite;
+
   color: $color-text;
   line-height: 1.6;
   overflow-x: hidden;
@@ -40,7 +43,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-// ===== ANIMACIÓN REAL =====
+// ===== ANIMACIONES =====
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -54,11 +57,13 @@ body {
 
 // ===== HEADER =====
 header {
+
   max-width: 1100px;
   margin: 0 auto;
   padding: 28px 20px;
 
   .navbar {
+
     .nav-link {
       position: relative;
       transition: color 0.3s ease;
@@ -81,21 +86,29 @@ header {
   }
 }
 
+// ===== NAVBAR MOBILE =====
 @media (max-width: 768px) {
+
   .navbar-nav {
     flex-direction: column;
     gap: 16px;
     text-align: center;
   }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
 }
 
-// ===== INDEX =====
+// ===== MAIN HOME =====
 .mainhome {
+
   max-width: 1100px;
   margin: 0 auto;
   padding: 100px 20px;
+
   animation: fadeUp 0.9s ease forwards;
-    animation-delay: 0.9s;
+  animation-delay: 0.9s;
 
   h1 {
     opacity: 0;
@@ -104,6 +117,7 @@ header {
   }
 
   section {
+
     display: flex;
     align-items: flex-start;
     gap: 60px;
@@ -112,7 +126,6 @@ header {
       line-height: 1.6;
     }
 
-    // Animación para el contenido genérico en index (texto + logo)
     > div {
       opacity: 0;
       animation: fadeUp 0.6s ease forwards;
@@ -126,12 +139,13 @@ header {
     }
 
     .card {
+
       @extend %card-base;
+
       opacity: 0;
       animation: fadeUp 0.6s ease forwards;
       transition: transform 0.3s ease;
 
-      // Delay diferente para cada card
       &:nth-child(1) { animation-delay: 0.1s; }
       &:nth-child(2) { animation-delay: 0.3s; }
       &:nth-child(3) { animation-delay: 0.5s; }
@@ -151,64 +165,81 @@ header {
   }
 
   .logohome {
+
     width: 320px;
     height: 320px;
     object-fit: cover;
+
     border-radius: 5%;
     border: 2px solid $border-color;
+
     box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+
     flex-shrink: 0;
     order: 2;
+
     opacity: 0;
     animation: fadeUp 0.6s ease forwards;
     animation-delay: 0.5s;
   }
+}
 
-  /* nuevas reglas para la sección de bases de datos */
-  .databases,
-  /* sección herramientas idéntica a bases de datos */
-  .tools {
-    margin-top: 60px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 60px;
+// ===== SEPARACIÓN PROYECTOS =====
+.projects-section {
+  margin-top: 100px;
+}
 
-    h2 {
-      width: 100%;
-      margin-bottom: 20px;
-      color: white;
-      text-align: center;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards;
-      animation-delay: 0.1s;
-    }
+// ===== SKILLS =====
+.databases,
+.tools {
 
-    .card {
-      @extend %card-base;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards;
-      transition: transform 0.3s ease;
+  margin-top: 60px;
 
-      &:nth-child(1) { animation-delay: 0.1s; }
-      &:nth-child(2) { animation-delay: 0.3s; }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
 
-      &:hover {
-        transform: translateY(-4px);
+  h2 {
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
 
-        .card-img-top {
-          transform: scale(1.1);
-        }
-      }
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    animation-delay: 0.1s;
+  }
+
+  .card {
+
+    @extend %card-base;
+
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    transition: transform 0.3s ease;
+
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.3s; }
+
+    &:hover {
+      transform: translateY(-4px);
 
       .card-img-top {
-        transition: transform 0.3s ease;
+        transform: scale(1.1);
       }
+    }
+
+    .card-img-top {
+      transition: transform 0.3s ease;
     }
   }
 }
 
+// ===== RESPONSIVE =====
 @media (max-width: 768px) {
+
   .mainhome {
+
     section {
       flex-direction: column;
       align-items: center;
@@ -224,13 +255,17 @@ header {
 
 // ===== CONTACTO =====
 .contacto {
+
   max-width: 1100px;
   margin: 0 auto;
+
   padding: 80px 20px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 80px;
+
   flex-wrap: wrap;
 
   h1 {
@@ -240,14 +275,18 @@ header {
   }
 
   .form {
+
     @extend %card-base;
 
     padding: 40px;
+
     max-width: 450px;
     width: 100%;
+
     display: flex;
     flex-direction: column;
     gap: 24px;
+
     opacity: 0;
     animation: fadeUp 0.8s ease forwards;
     animation-delay: 0.5s;
@@ -262,10 +301,14 @@ header {
 
     input,
     textarea {
+
       padding: 14px;
+
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.2);
+
       border-radius: 10px;
+
       color: white;
       outline: none;
 
@@ -275,11 +318,15 @@ header {
     }
 
     button {
+
       padding: 14px;
-      background: linear-gradient(135deg, #2b1860, #411cf9);
+
+      background: linear-gradient(135deg,#2b1860,#411cf9);
+
       color: white;
       border: none;
       border-radius: 10px;
+
       cursor: pointer;
 
       &:hover {
@@ -288,45 +335,43 @@ header {
     }
   }
 
- .imgform {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 12px;
+  .imgform {
 
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards;
-  animation-delay: 0.6s;
-  transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 380px;
 
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-}
+    height: auto;
 
-@media (max-width: 768px) {
-  .contacto {
-    flex-direction: column;
-    gap: 40px;
+    object-fit: contain;
 
-    .imgform {
-      width: 100%;
-      max-width: 300px;
+    border-radius: 12px;
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.6s;
+
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 }
 
 // ===== FOOTER =====
 .footer {
+
   margin: 120px auto 0;
   max-width: 1100px;
+
   padding: 28px 20px;
+
   border-top: 1px solid $border-color;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   gap: 16px;
 
   p {
@@ -341,18 +386,24 @@ header {
 }
 
 .footersocials {
+
   display: flex;
   gap: 20px;
 
   a {
+
     width: 60px;
     height: 60px;
+
     border-radius: 50%;
     border: 1px solid $border-color;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background: rgba(255,255,255,0.03);
+
     transition: 0.35s ease;
 
     img {
@@ -363,6 +414,7 @@ header {
     }
 
     &:hover {
+
       transform: translateY(-6px);
 
       img {
@@ -373,6 +425,7 @@ header {
 }
 
 @media (max-width: 600px) {
+
   .footer {
     flex-direction: column;
     text-align: center;
