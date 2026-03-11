@@ -1,4 +1,6 @@
-.contacto .form, .mainhome section .card {
+@charset "UTF-8";
+.contacto .form, .mainhome .databases .card,
+.mainhome .tools .card, .mainhome section .card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
@@ -15,9 +17,9 @@
 body {
   font-family: "Inter", system-ui, sans-serif;
   min-height: 100vh;
-  background: linear-gradient(120deg, #1fd7ac, #410af7, #960f96, #08b07b);
+  background: linear-gradient(120deg, #013467, #7b61e0, #00203f, #36ecde);
   background-size: 400% 400%;
-  animation: gradientMove 18s ease infinite;
+  animation: gradientMove 11s ease infinite;
   color: #e5e7eb;
   line-height: 1.6;
   overflow-x: hidden;
@@ -78,6 +80,13 @@ header .navbar .nav-link:hover::after {
   max-width: 1100px;
   margin: 0 auto;
   padding: 100px 20px;
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: 0.9s;
+}
+.mainhome h1 {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.1s;
 }
 .mainhome section {
   display: flex;
@@ -86,6 +95,16 @@ header .navbar .nav-link:hover::after {
 }
 .mainhome section p {
   line-height: 1.6;
+}
+.mainhome section > div {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.3s;
+}
+.mainhome section .logohome {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.5s;
 }
 .mainhome section .card {
   opacity: 0;
@@ -114,14 +133,60 @@ header .navbar .nav-link:hover::after {
   width: 320px;
   height: 320px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 5%;
   border: 2px solid #2a2a2a;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   flex-shrink: 0;
   order: 2;
   opacity: 0;
-  animation: fadeUp 0.8s ease forwards;
-  animation-delay: 0.4s;
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.5s;
+}
+.mainhome {
+  /* nuevas reglas para la sección de bases de datos */
+}
+.mainhome .databases,
+.mainhome .tools {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+.mainhome .databases h2,
+.mainhome .tools h2 {
+  width: 100%;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 0.1s;
+}
+.mainhome .databases .card,
+.mainhome .tools .card {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  transition: transform 0.3s ease;
+}
+.mainhome .databases .card:nth-child(1),
+.mainhome .tools .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mainhome .databases .card:nth-child(2),
+.mainhome .tools .card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.mainhome .databases .card:hover,
+.mainhome .tools .card:hover {
+  transform: translateY(-4px);
+}
+.mainhome .databases .card:hover .card-img-top,
+.mainhome .tools .card:hover .card-img-top {
+  transform: scale(1.1);
+}
+.mainhome .databases .card .card-img-top,
+.mainhome .tools .card .card-img-top {
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -182,7 +247,7 @@ header .navbar .nav-link:hover::after {
 }
 .contacto .form button {
   padding: 14px;
-  background: linear-gradient(135deg, #b734a3, #08d8b2);
+  background: linear-gradient(135deg, #2b1860, #411cf9);
   color: white;
   border: none;
   border-radius: 10px;
@@ -192,13 +257,15 @@ header .navbar .nav-link:hover::after {
   transform: translateY(-2px);
 }
 .contacto .imgform {
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
-  border-radius: 16px;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards;
   animation-delay: 0.6s;
+  transition: transform 0.3s ease;
 }
 .contacto .imgform:hover {
   transform: scale(1.05);
