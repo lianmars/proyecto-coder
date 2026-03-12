@@ -16,7 +16,7 @@
 body {
   font-family: "Inter", system-ui, sans-serif;
   min-height: 100vh;
-  background: linear-gradient(120deg, #013467, #7b61e0, #00203f, #36ecde);
+  background: linear-gradient(120deg, #28ff7b, #7b61e0, #024d98, #36ecde);
   background-size: 400% 400%;
   animation: gradientMove 11s ease infinite;
   color: #e5e7eb;
